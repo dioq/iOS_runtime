@@ -20,8 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    [self test1];
-    [self addMethod];
+    [self handleProperty];
+    //    [self addMethod];
+    //    [self changeMethod];
 }
 /*
  // 遍历某个类所有的成员变量
@@ -50,7 +51,7 @@
  **/
 
 //成员变量
--(void)test1{
+-(void)handleProperty{
     self.person = [[Person alloc]init];
     self.person.name = @"old name";
     self.person.sex = [NSNumber numberWithInt:1];
@@ -92,22 +93,36 @@
 -(void)addMethod{
     self.person = [[Person alloc]init];
     /*
-     动态添加 coding 方法
-     (IMP)codingOC 意思是 codingOC 的地址指针;
+     动态添加
      "v@:" 意思是，v 代表无返回值 void，如果是 i 则代表 int；@代表 id sel; : 代表 SEL _cmd;
      “v@:@@” 意思是，两个参数的没有返回值。
      */
-    class_addMethod([self.person class], @selector(coding), (IMP)codingOC, "v@:");
-    // 调用 coding 方法响应事件
-    if ([self.person respondsToSelector:@selector(coding)]) {
-        [self.person performSelector:@selector(coding)];
-    } else {
+    //给Person类动态添加 printPerson方法,并在ViewController类里添加实现方法find
+    BOOL successOr = class_addMethod([Person class], @selector(printPerson), class_getMethodImplementation([ViewController class], @selector(find)), "v@:");
+    if (successOr) {
+        NSLog(@"添加方法成功");
+        //runtime动态添加的方法,只能通过performSelector来动态调用
+        [self.person performSelector:@selector(printPerson)];
+    }else{
         NSLog(@"添加方法失败");
     }
 }
-// 编写 codingOC 的实现
-void codingOC(id self,SEL _cmd) {
-    NSLog(@"添加方法成功");
+-(void)find {
+    NSLog(@"printPerson 方法的实现, 在ViewController里实现,实现方法是find");
+}
+
+
+//交换方法
+-(void)changeMethod{
+    self.person = [[Person alloc]init];
+    NSLog(@"%@",_person.coding);
+    NSLog(@"%@",_person.eating);
+    Method oriMethod = class_getInstanceMethod(_person.class, @selector(coding));
+    Method curMethod = class_getInstanceMethod(_person.class, @selector(eating));
+    method_exchangeImplementations(oriMethod, curMethod);
+    NSLog(@"======================= 分割线 ========================");
+    NSLog(@"%@",_person.coding);
+    NSLog(@"%@",_person.eating);
 }
 
 @end

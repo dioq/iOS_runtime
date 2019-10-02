@@ -11,17 +11,14 @@
 @implementation Person
 
 - (NSString *)coding {
-    NSLog(@"go to Person coding");
     return @"coding";
 }
 
 - (NSString *)eating {
-    NSLog(@"go to Person eating");
     return @"eating";
 }
 
 - (NSString *)changeMethod {
-    NSLog(@"go to Person eating");
     return @"方法已被拦截并替换";
 }
 
