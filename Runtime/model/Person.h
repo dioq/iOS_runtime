@@ -19,7 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)coding;
 - (NSString *)eating;
+- (void)run:(NSInteger)num;
+- (NSString *)func3:(NSString *)param;
 - (NSString *)changeMethod;
+
+- (NSString *)funcForRuntimeCall;
 
 @end
 

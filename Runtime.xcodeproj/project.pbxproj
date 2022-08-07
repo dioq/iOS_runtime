@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A4282BD289D7F05001BFCCA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4282BB289D7F05001BFCCA /* MainViewController.m */; };
-		3A4282BE289D7F05001BFCCA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4282BC289D7F05001BFCCA /* MainViewController.xib */; };
+		3A4282BD289D7F05001BFCCA /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */; };
+		3A4282BE289D7F05001BFCCA /* RuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */; };
+		3AEF9DA1289EEFD200ACB99A /* MsgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9D9F289EEFD200ACB99A /* MsgSendViewController.m */; };
+		3AEF9DA2289EEFD200ACB99A /* MsgSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF9DA0289EEFD200ACB99A /* MsgSendViewController.xib */; };
+		3AEF9DA5289EF0AF00ACB99A /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9DA4289EF0AF00ACB99A /* MyTabBarController.m */; };
 		CE28CAA02341C2FE00444FCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE28CA9F2341C2FE00444FCD /* AppDelegate.m */; };
 		CE28CAAB2341C30000444FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE28CAAA2341C30000444FCD /* Assets.xcassets */; };
 		CE28CAAE2341C30000444FCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE28CAAC2341C30000444FCD /* LaunchScreen.storyboard */; };
@@ -17,9 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A4282BA289D7F05001BFCCA /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		3A4282BB289D7F05001BFCCA /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		3A4282BC289D7F05001BFCCA /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3A4282BA289D7F05001BFCCA /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuntimeViewController.xib; sourceTree = "<group>"; };
+		3AEF9D9E289EEFD200ACB99A /* MsgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgSendViewController.h; sourceTree = "<group>"; };
+		3AEF9D9F289EEFD200ACB99A /* MsgSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgSendViewController.m; sourceTree = "<group>"; };
+		3AEF9DA0289EEFD200ACB99A /* MsgSendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MsgSendViewController.xib; sourceTree = "<group>"; };
+		3AEF9DA3289EF0AF00ACB99A /* MyTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		3AEF9DA4289EF0AF00ACB99A /* MyTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
 		CE28CA9B2341C2FE00444FCD /* Runtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE28CA9E2341C2FE00444FCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE28CA9F2341C2FE00444FCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,9 +72,14 @@
 				CE28CAB72343065C00444FCD /* model */,
 				CE28CA9E2341C2FE00444FCD /* AppDelegate.h */,
 				CE28CA9F2341C2FE00444FCD /* AppDelegate.m */,
-				3A4282BA289D7F05001BFCCA /* MainViewController.h */,
-				3A4282BB289D7F05001BFCCA /* MainViewController.m */,
-				3A4282BC289D7F05001BFCCA /* MainViewController.xib */,
+				3AEF9DA3289EF0AF00ACB99A /* MyTabBarController.h */,
+				3AEF9DA4289EF0AF00ACB99A /* MyTabBarController.m */,
+				3A4282BA289D7F05001BFCCA /* RuntimeViewController.h */,
+				3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */,
+				3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */,
+				3AEF9D9E289EEFD200ACB99A /* MsgSendViewController.h */,
+				3AEF9D9F289EEFD200ACB99A /* MsgSendViewController.m */,
+				3AEF9DA0289EEFD200ACB99A /* MsgSendViewController.xib */,
 				CE28CAAA2341C30000444FCD /* Assets.xcassets */,
 				CE28CAAC2341C30000444FCD /* LaunchScreen.storyboard */,
 				CE28CAAF2341C30000444FCD /* Info.plist */,
@@ -142,7 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE28CAAE2341C30000444FCD /* LaunchScreen.storyboard in Resources */,
-				3A4282BE289D7F05001BFCCA /* MainViewController.xib in Resources */,
+				3A4282BE289D7F05001BFCCA /* RuntimeViewController.xib in Resources */,
+				3AEF9DA2289EEFD200ACB99A /* MsgSendViewController.xib in Resources */,
 				CE28CAAB2341C30000444FCD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,8 +170,10 @@
 			files = (
 				CE28CAA02341C2FE00444FCD /* AppDelegate.m in Sources */,
 				CE28CABA2343067600444FCD /* Person.m in Sources */,
-				3A4282BD289D7F05001BFCCA /* MainViewController.m in Sources */,
+				3A4282BD289D7F05001BFCCA /* RuntimeViewController.m in Sources */,
 				CE28CAB12341C30000444FCD /* main.m in Sources */,
+				3AEF9DA1289EEFD200ACB99A /* MsgSendViewController.m in Sources */,
+				3AEF9DA5289EF0AF00ACB99A /* MyTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = YES;
 				DEVELOPMENT_TEAM = 38D3676P2T;
 				INFOPLIST_FILE = Runtime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = YES;
 				DEVELOPMENT_TEAM = 38D3676P2T;
 				INFOPLIST_FILE = Runtime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

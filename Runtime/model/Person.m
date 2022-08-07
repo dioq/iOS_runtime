@@ -18,8 +18,20 @@
     return @"eating";
 }
 
+- (void)run:(NSInteger)num {
+    NSLog(@"num:%ld", num);
+}
+
+-(NSString *)func3:(NSString *)param {
+    return [NSString stringWithFormat:@"%@ -- from Person", param];
+}
+
 - (NSString *)changeMethod {
     return @"方法已被拦截并替换";
+}
+
+-(NSString *)funcForRuntimeCall {
+    return @"你成功用 runtime 调用了这个方法";
 }
 
 @end

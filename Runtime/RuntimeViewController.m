@@ -6,11 +6,11 @@
 //  Copyright © 2022 Dio. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "RuntimeViewController.h"
 #import <objc/runtime.h>
 #import "Person.h"
 
-@interface MainViewController ()
+@interface RuntimeViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *show;
 @property(nonatomic, strong)Person *person;
@@ -43,12 +43,12 @@
  objc_msgSend
  **/
 
-@implementation MainViewController
+@implementation RuntimeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Runtime";
+    self.navigationItem.title = @"objc/runtime";
     self.person = [[Person alloc]init];
 }
 
@@ -64,7 +64,7 @@
      “v@:@@” 意思是，两个参数的没有返回值。
      */
     //给Person类动态添加 printPerson方法,并在ViewController类里添加实现方法find
-    BOOL successOr = class_addMethod([Person class], @selector(printPerson), class_getMethodImplementation([MainViewController class], @selector(find)), "v@:");
+    BOOL successOr = class_addMethod([Person class], @selector(printPerson), class_getMethodImplementation([RuntimeViewController class], @selector(find)), "v@:");
     if (successOr) {
         NSLog(@"添加方法成功");
         [self.show setText:@"添加方法成功"];
