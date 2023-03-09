@@ -54,9 +54,15 @@
     NSString *pase = [UIPasteboard generalPasteboard].string;
     NSLog(@"%@",pase);
     
-    id obj1 = ((id (*)(id, SEL))objc_msgSend)(objc_getClass("UIPasteboard"), sel_registerName("generalPasteboard"));
-    id obj2 = ((id (*)(id, SEL))objc_msgSend)(obj1, sel_registerName("string"));
+    id objZ = ((id (*)(id, SEL))objc_msgSend)(objc_getClass("UIPasteboard"), sel_registerName("generalPasteboard"));
+    
+    // 实现读取粘贴板
+    id obj2 = ((id (*)(id, SEL))objc_msgSend)(objZ, sel_registerName("string"));
     NSLog(@"obj2:\n%@",obj2);
+    
+    NSString *tipString = @"This is a test string.";
+    ((void (*)(id, SEL, id))objc_msgSend)(objZ, sel_registerName("setString:"),tipString);
+    NSLog(@"粘贴板上已经写了数据,可以找个地方粘贴一下数据");
 }
 
 @end

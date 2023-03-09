@@ -14,10 +14,6 @@
     return @"coding";
 }
 
-- (NSString *)eating {
-    return @"eating";
-}
-
 - (void)run:(NSInteger)num {
     NSLog(@"num:%ld", num);
 }

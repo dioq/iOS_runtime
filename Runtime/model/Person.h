@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSNumber *sex;
 
 - (NSString *)coding;
-- (NSString *)eating;
 - (void)run:(NSInteger)num;
 - (NSString *)func3:(NSString *)param;
 - (NSString *)changeMethod;

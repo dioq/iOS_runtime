@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A4282BD289D7F05001BFCCA /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */; };
 		3A4282BE289D7F05001BFCCA /* RuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */; };
+		3A57C42A29B9B18600FA01DC /* NewImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A57C42929B9B18600FA01DC /* NewImp.m */; };
+		3A57C43129B9BB4600FA01DC /* MyNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A57C43029B9BB4600FA01DC /* MyNavgationController.m */; };
 		3AEF9DA1289EEFD200ACB99A /* MsgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9D9F289EEFD200ACB99A /* MsgSendViewController.m */; };
 		3AEF9DA2289EEFD200ACB99A /* MsgSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF9DA0289EEFD200ACB99A /* MsgSendViewController.xib */; };
 		3AEF9DA5289EF0AF00ACB99A /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF9DA4289EF0AF00ACB99A /* MyTabBarController.m */; };
@@ -23,6 +25,10 @@
 		3A4282BA289D7F05001BFCCA /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuntimeViewController.xib; sourceTree = "<group>"; };
+		3A57C42829B9B18600FA01DC /* NewImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewImp.h; sourceTree = "<group>"; };
+		3A57C42929B9B18600FA01DC /* NewImp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewImp.m; sourceTree = "<group>"; };
+		3A57C42F29B9BB4600FA01DC /* MyNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavgationController.h; sourceTree = "<group>"; };
+		3A57C43029B9BB4600FA01DC /* MyNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavgationController.m; sourceTree = "<group>"; };
 		3AEF9D9E289EEFD200ACB99A /* MsgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgSendViewController.h; sourceTree = "<group>"; };
 		3AEF9D9F289EEFD200ACB99A /* MsgSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgSendViewController.m; sourceTree = "<group>"; };
 		3AEF9DA0289EEFD200ACB99A /* MsgSendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MsgSendViewController.xib; sourceTree = "<group>"; };
@@ -50,6 +56,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A57C42B29B9BB0B00FA01DC /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CE28CA9E2341C2FE00444FCD /* AppDelegate.h */,
+				CE28CA9F2341C2FE00444FCD /* AppDelegate.m */,
+				3A57C42F29B9BB4600FA01DC /* MyNavgationController.h */,
+				3A57C43029B9BB4600FA01DC /* MyNavgationController.m */,
+				3AEF9DA3289EF0AF00ACB99A /* MyTabBarController.h */,
+				3AEF9DA4289EF0AF00ACB99A /* MyTabBarController.m */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
 		CE28CA922341C2FE00444FCD = {
 			isa = PBXGroup;
 			children = (
@@ -69,11 +88,8 @@
 		CE28CA9D2341C2FE00444FCD /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				3A57C42B29B9BB0B00FA01DC /* navigation */,
 				CE28CAB72343065C00444FCD /* model */,
-				CE28CA9E2341C2FE00444FCD /* AppDelegate.h */,
-				CE28CA9F2341C2FE00444FCD /* AppDelegate.m */,
-				3AEF9DA3289EF0AF00ACB99A /* MyTabBarController.h */,
-				3AEF9DA4289EF0AF00ACB99A /* MyTabBarController.m */,
 				3A4282BA289D7F05001BFCCA /* RuntimeViewController.h */,
 				3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */,
 				3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */,
@@ -93,6 +109,8 @@
 			children = (
 				CE28CAB82343067600444FCD /* Person.h */,
 				CE28CAB92343067600444FCD /* Person.m */,
+				3A57C42829B9B18600FA01DC /* NewImp.h */,
+				3A57C42929B9B18600FA01DC /* NewImp.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -123,7 +141,7 @@
 		CE28CA932341C2FE00444FCD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = Dio;
 				TargetAttributes = {
 					CE28CA9A2341C2FE00444FCD = {
@@ -171,9 +189,11 @@
 				CE28CAA02341C2FE00444FCD /* AppDelegate.m in Sources */,
 				CE28CABA2343067600444FCD /* Person.m in Sources */,
 				3A4282BD289D7F05001BFCCA /* RuntimeViewController.m in Sources */,
+				3A57C43129B9BB4600FA01DC /* MyNavgationController.m in Sources */,
 				CE28CAB12341C30000444FCD /* main.m in Sources */,
 				3AEF9DA1289EEFD200ACB99A /* MsgSendViewController.m in Sources */,
 				3AEF9DA5289EF0AF00ACB99A /* MyTabBarController.m in Sources */,
+				3A57C42A29B9B18600FA01DC /* NewImp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +237,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -241,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -275,6 +296,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -293,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
