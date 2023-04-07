@@ -87,6 +87,7 @@
     class_replaceMethod(objc_getClass("NewImp"), sel_registerName("normalMethod"), newImp, method_getTypeEncoding(newM));
     NewImp *newImpObject = [[NewImp alloc] init];
     [newImpObject normalMethod];
+    [newImpObject replaceM];
 }
 
 - (IBAction)changeProperty:(UIButton *)sender {
