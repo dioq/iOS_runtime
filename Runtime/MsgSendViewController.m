@@ -8,7 +8,6 @@
 
 #import "MsgSendViewController.h"
 #import <objc/message.h>
-#import "Person.h"
 
 @interface MsgSendViewController ()
 
@@ -17,9 +16,8 @@
 @implementation MsgSendViewController
 
 /*
- 通过类型强制转换
+ 类型转换
  ((void (*)(id, SEL, id))objc_msgSend)(target, sel, value);
- 需要传的参数个数自行定义
  **/
 
 - (void)viewDidLoad {
@@ -28,28 +26,51 @@
     self.navigationItem.title = @"objc/message";
 }
 
-- (IBAction)callMyFunc:(UIButton *)sender {
-    //    Person *person = [[Person alloc]init];
-    id p1 =  ((id (*)(id, SEL))objc_msgSend)(objc_getClass("Person"), sel_registerName("alloc"));
-    id person = ((id (*)(id, SEL))objc_msgSend)(p1,sel_registerName("init"));
+// performSelector 调用实例方法
+- (IBAction)call_instance_method_act:(UIButton *)sender {
+    Class TestClass = objc_getClass("TestClass");
+    id test_obj =  ((id (*)(id, SEL))objc_msgSend)(TestClass, sel_registerName("alloc"));
+    test_obj = ((id (*)(id, SEL))objc_msgSend)(test_obj,sel_registerName("init"));
     
-    // 调用run有参数方法@selector(run:)后依奖填写要传入的参数
-    NSInteger param = 20;
-    ((void (*)(id, SEL, id))objc_msgSend)(person, @selector(run:), @(param));
-    
-    
-    // 调用类方法的方式：两种
-    // 第一种通过类名调用
-    // 第二种通过类对象调用
-    //    [[Person class] eating];
-    
-    // 用类名调用类方法，底层会自动把类名转换成类对象调用
-    // 本质：让类对象发送消息
-    NSString *func3Param = @"MSGP";
-    id func3ret = ((id (*)(id, SEL, id))objc_msgSend)(person, @selector(func3:), func3Param);
-    NSLog(@"func3ret:%@",func3ret);
+    NSString *param1 = @"Hello";
+    NSString *param2 = @"World";
+    id retVal = [test_obj performSelector:@selector(func1Param1:param2:) withObject:param1 withObject:param2];
+    NSLog(@"%@",retVal);
 }
 
+// performSelector 调用类方法
+- (IBAction)call_class_method_act:(UIButton *)sender {
+    Class TestClass = objc_getClass("TestClass");
+    
+    NSString *param1 = @"Hello";
+    NSString *param2 = @"World";
+    id retVal = [TestClass performSelector:@selector(func2Param1:param2:) withObject:param1 withObject:param2];
+    NSLog(@"%@",retVal);
+}
+
+// objc_msgSend 调用实例方法
+- (IBAction)objc_msgSend_call_instance_method:(UIButton *)sender {
+    Class TestClass = objc_getClass("TestClass");
+    id test_obj =  ((id (*)(id, SEL))objc_msgSend)(TestClass, sel_registerName("alloc"));
+    test_obj = ((id (*)(id, SEL))objc_msgSend)(test_obj,sel_registerName("init"));
+    
+    NSString *param1 = @"Hello";
+    NSString *param2 = @"World";
+    NSString *retVal = ((id (*)(id, SEL, NSString *, NSString *))objc_msgSend)(test_obj, sel_registerName("func1Param1:param2:"), param1, param2);
+    NSLog(@"%@",retVal);
+}
+
+// objc_msgSend 调用类方法
+- (IBAction)objc_msgSend_call_class_method:(UIButton *)sender {
+    Class TestClass = objc_getClass("TestClass");
+    
+    NSString *param1 = @"Hello";
+    NSString *param2 = @"World";
+    NSString *retVal = ((id (*)(id, SEL, NSString *, NSString *))objc_msgSend)(TestClass, sel_registerName("func2Param1:param2:"), param1, param2);
+    NSLog(@"%@",retVal);
+}
+
+// objc_msgSend 调用系统方法的一个例子
 - (IBAction)callSysFunc:(UIButton *)sender {
     NSString *pase = [UIPasteboard generalPasteboard].string;
     NSLog(@"%@",pase);
@@ -57,8 +78,8 @@
     id objZ = ((id (*)(id, SEL))objc_msgSend)(objc_getClass("UIPasteboard"), sel_registerName("generalPasteboard"));
     
     // 实现读取粘贴板
-    id obj2 = ((id (*)(id, SEL))objc_msgSend)(objZ, sel_registerName("string"));
-    NSLog(@"obj2:\n%@",obj2);
+    id retVal = ((id (*)(id, SEL))objc_msgSend)(objZ, sel_registerName("string"));
+    NSLog(@"retVal:%@",retVal);
     
     NSString *tipString = @"This is a test string.";
     ((void (*)(id, SEL, id))objc_msgSend)(objZ, sel_registerName("setString:"),tipString);

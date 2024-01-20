@@ -11,6 +11,8 @@
 @implementation Person
 
 - (NSString *)coding {
+    NSString *retVal = [[Person new] coding];// 在这里可以调用 NewImp eating
+    NSLog(@"%s:%d was call, retVal:%@",__FUNCTION__,__LINE__,retVal);
     return @"coding";
 }
 

@@ -21,8 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 添加子控制器
-    [self addOneViewController:[[RuntimeViewController alloc] init] image:@"tab_home_normal" selectedImage:@"tab_home_50" title:@"language"];
-    [self addOneViewController:[[MsgSendViewController alloc] init] image:@"tab_c2c_normal" selectedImage:@"tab_c2c_50" title:@"ui"];
+    [self addOneViewController:[[MsgSendViewController alloc] init] image:@"tab_c2c_normal" selectedImage:@"tab_c2c_50" title:@"objc_msgSend"];
+    [self addOneViewController:[[RuntimeViewController alloc] init] image:@"tab_home_normal" selectedImage:@"tab_home_50" title:@"runtime"];
     
     [self setBackgroudColor];
 }
