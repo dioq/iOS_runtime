@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		24B279E02B5BAA7100C99B0D /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B279DF2B5BAA7100C99B0D /* TestClass.m */; };
-		24B279E22B5BC27200C99B0D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 24B279E12B5BC27200C99B0D /* README.md */; };
 		3A4282BD289D7F05001BFCCA /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */; };
 		3A4282BE289D7F05001BFCCA /* RuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */; };
 		3A57C42A29B9B18600FA01DC /* NewImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A57C42929B9B18600FA01DC /* NewImp.m */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		24B279DE2B5BAA7100C99B0D /* TestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
 		24B279DF2B5BAA7100C99B0D /* TestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
-		24B279E12B5BC27200C99B0D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3A4282BA289D7F05001BFCCA /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		3A4282BB289D7F05001BFCCA /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		3A4282BC289D7F05001BFCCA /* RuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuntimeViewController.xib; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				CE28CAAC2341C30000444FCD /* LaunchScreen.storyboard */,
 				CE28CAAF2341C30000444FCD /* Info.plist */,
 				CE28CAB02341C30000444FCD /* main.m */,
-				24B279E12B5BC27200C99B0D /* README.md */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 			files = (
 				CE28CAAE2341C30000444FCD /* LaunchScreen.storyboard in Resources */,
 				3A4282BE289D7F05001BFCCA /* RuntimeViewController.xib in Resources */,
-				24B279E22B5BC27200C99B0D /* README.md in Resources */,
 				3AEF9DA2289EEFD200ACB99A /* MsgSendViewController.xib in Resources */,
 				CE28CAAB2341C30000444FCD /* Assets.xcassets in Resources */,
 			);
