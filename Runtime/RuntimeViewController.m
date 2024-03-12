@@ -8,6 +8,7 @@
 
 #import "RuntimeViewController.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
 #import "Person.h"
 #import "NewImp.h"
 
@@ -62,6 +63,29 @@
     NSLog(@"属性 name:%@, age:%@", name, age_add);
     
     free(ivar);
+}
+
+- (IBAction)property2_act:(UIButton *)sender {
+    Person *person = [Person new];
+    person.name = @"Little Dio";
+    person.sex = [NSNumber numberWithInt:1];
+    NSLog(@"%d: name:%@  sex:%@", __LINE__, person.name, person.sex);
+    
+    Class clz = objc_getClass("Person");
+    unsigned int outCount, i;
+    objc_property_t *properties = class_copyPropertyList(clz, &outCount);
+    
+    for (i = 0; i < outCount; i++) {
+        objc_property_t property = properties[i];
+        const char *property_name = property_getName(property);
+        const char *property_attributes = property_getAttributes(property);
+        NSLog(@"%d: property_name:%s,property_attributes:%s",i,property_name,property_attributes);
+        NSString *property_name_OC = [NSString stringWithUTF8String:property_name];
+        //        id property_value = ((id (*)(id, SEL, NSString *))objc_msgSend)(person, sel_registerName("valueForKey:"), property_name_OC);
+        id property_value = [person valueForKey:property_name_OC];
+        NSLog(@"property_value:%@",property_value);
+    }
+    free(properties);
 }
 
 // 获取 类 中的所有方法
